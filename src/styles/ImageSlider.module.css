@@ -1,0 +1,22 @@
+.slider{
+    width: 60%;
+    margin: 30px auto;
+}
+
+.imgcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .slider {
+        width: 100%;
+        margin: 15px auto;
+    }
+}
+  

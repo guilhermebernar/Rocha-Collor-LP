@@ -1,15 +1,97 @@
-.container {
-  /* Seus estilos para o container */
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-.logo {
-  /* Seus estilos para o logo */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 100vw;
+    min-width: 100vw;
+    height: fit-content;
+    background-color: transparent;
+    font-family: 'Inter', sans-serif;
+    -webkit-box-shadow: -1px 7px 50px 24px rgba(0,0,0,0.48); 
+    box-shadow: -1px 7px 50px 24px rgba(0,0,0,0.48);
+    margin-bottom: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  margin: 0 auto;
+  padding: 0 20%;
 }
 
 .title {
-  /* Seus estilos para o título */
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+  .title {
+    font-size: 17px;
+    margin: 1rem 0;
+  }
+  .description {
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0.2rem;
+    padding: 0 15px;
+  }
 }
 
 .description {
-  /* Seus estilos para a descrição */
+  font-size: 1rem;
+  text-align: center;
+  margin: 1.4rem 0;
 }
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
+  height: 150px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.location {
+  font-style: italic;
+}
+
+.promotion {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.jobOpening {
+  font-weight: bold;
+}
+
+.cta {
+  margin-top: 10px;
+  color: #b7896a;
+}
+
+.ctaLink {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+

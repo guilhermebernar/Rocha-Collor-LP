@@ -92,7 +92,8 @@ body {
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    #6e4d37
+    /* rgb(var(--background-start-rgb)); */
 }
 
 a {
@@ -105,3 +106,9 @@ a {
     color-scheme: dark;
   }
 }
+
+.swiper-button-next, .swiper-button-prev {
+  color: rgba(255, 255, 255, 1) !important;
+  font-size: 14px;
+}
+

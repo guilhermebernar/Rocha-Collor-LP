@@ -1,26 +1,27 @@
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import 'swiper/css/bundle';
+import styles from '@/styles/ImageSlider.module.css';
 
 export default function ImageSlider({ images }) {
-  // Settings for the slider
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
-
-  return (
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <div key={index}>
-          <Image src={`/assets/img/${image}`} alt={`Slide ${index}`} width={500} height={300} />
-        </div>
-      ))}
-    </Slider>
-  );
+    return (
+        <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+            className={styles.slider}
+        >
+            {images.map((image, index) => (
+                <SwiperSlide key={index}>
+                    <div className={styles.imgcontainer}>
+                        <Image src={`/assets/img/${image}`} alt={`Slide ${index}`} width={500} height={300} />
+                    </div>
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    );
 }
-
