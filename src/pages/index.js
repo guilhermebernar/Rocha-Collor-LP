@@ -1,15 +1,41 @@
-import fs from 'fs'
-import Head from 'next/head'
-import path from 'path'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
-import CampainVideo from '@/components/CampainVideo'
-import ImageSlider from '@/components/ImageSlider'
-import ContactButton from '@/components/ContactButton'
-import GoogleTagManager from '@/components/GoogleTagManeger'
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.css';
+import CampainVideo from '@/components/CampainVideo';
+import ImageSlider from '@/components/ImageSlider';
+import ContactButton from '@/components/ContactButton';
+import GoogleTagManager from '@/components/GoogleTagManeger';
 
+export default function Home() {
+  const [images, setImages] = useState([]);
+  const [video, setVideo] = useState(null);
 
-export default function Home({ images , video }) {
+  useEffect(() => {
+    const loadAssets = async () => {
+      const loadAssets = async () => {
+        // List of images
+        const images = [
+          '/assets/img/img1.jpg',
+          '/assets/img/img2.jpg',
+          '/assets/img/img3.jpg',
+          '/assets/img/img4.jpg',
+          '/assets/img/img5.jpg',
+          '/assets/img/img6.jpg',
+          '/assets/img/img7.jpg'
+        ];
+        setImages(images);
+  
+        const videoPath = "/assets/video/video01.mp4";
+        setVideo(videoPath);
+      };
+  
+      loadAssets();
+    };
+
+    loadAssets();
+  }, []);
+
   return (
     <main className={styles.container}>
       <Head>
@@ -70,18 +96,4 @@ export default function Home({ images , video }) {
       <ContactButton />
     </main>
   );
-}
-
-export async function getStaticProps() {
-  const imagesDir = path.join(process.cwd(), 'public/assets/img');
-  const images = fs.readdirSync(imagesDir);
-
-  const videoPath = "./assets/video/video01.mp4";
-
-  return {
-    props: {
-      images,
-      video: videoPath
-    }
-  };
 }
