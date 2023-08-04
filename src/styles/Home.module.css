@@ -35,6 +35,7 @@
   .container {
     padding: 0 10%;
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -50,6 +51,13 @@
     text-align: center;
     margin: 1rem 0.2rem;
     padding: 0 15px;
+  }
+  .promotion {
+    font-size: 18px;
+    font-size: 18px;
+    margin-top: 0 !important;
+    padding: 0 15px;
+    text-align: center;
   }
 }
 
@@ -78,6 +86,9 @@
 .promotion {
   font-size: 18px;
   margin-top: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .jobOpening {

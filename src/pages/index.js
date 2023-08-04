@@ -6,12 +6,14 @@ import styles from '@/styles/Home.module.css'
 import CampainVideo from '@/components/CampainVideo'
 import ImageSlider from '@/components/ImageSlider'
 import ContactButton from '@/components/ContactButton'
+import GoogleTagManager from '@/components/GoogleTagManeger'
 
 
-export default function Home({ images }) {
+export default function Home({ images , video }) {
   return (
     <main className={styles.container}>
       <Head>
+        <GoogleTagManager />
         <link rel="icon" href="/assets/logos/logo-nobg.svg" />
         <title>Rocha Collor | Pintura, Massas e Qualidade</title>
       </Head>
@@ -26,9 +28,11 @@ export default function Home({ images }) {
         </div>
       </header>
 
-      <h2 className={styles.title}>Somos solução para pintura e revestimento</h2>
+      <h2 className={styles.title}>
+        Somos solução para pintura e revestimento
+      </h2>
 
-      <CampainVideo />
+      <CampainVideo video={video} />
 
       <p className={styles.description}>
         Na <span className={styles.highlight}>Rocha Collor</span>, com sede em{" "}
@@ -38,27 +42,27 @@ export default function Home({ images }) {
         <span className={styles.highlight}>alta qualidade</span> repelem a água
         da chuva, protegem contra o calor e estão disponíveis em uma variedade
         de texturas e revestimentos.
-        <p className={styles.promotion}>
-          Além disso, temos uma{" "}
-          <span className={styles.highlight}>promoção especial</span>: na compra
-          de 10 barricas de 21 kg, você ganha 1 seladora de 16L.
-        </p>
-        <p className={styles.description}>
-          Estamos também em busca de um{" "}
-          <span className={styles.jobOpening}>
-            representante de vendas experiente
-          </span>{" "}
-          para se juntar à nossa equipe, sendo empresário, logista ou
-          empreededor individual.
-        </p>
-        <p className={styles.cta}>
-          <a
-            href="https://wa.me/5521986368650?text=Ol%C3%A1%2C+vim+para+saber+sobre+as+condi%C3%A7%C3%B5es+para+me+tornar+um+revendedor."
-            className={styles.ctaLink}
-          >
-            Clique e saiba mais sobre revenda!
-          </a>
-        </p>
+      </p>
+      <p className={styles.promotion}>
+        Além disso, temos uma{" "}
+        <span className={styles.highlight}>promoção especial</span>: na compra
+        de 10 barricas de 21 kg, você ganha 1 seladora de 16L.
+      </p>
+      <p className={styles.description}>
+        Estamos também em busca de um{" "}
+        <span className={styles.jobOpening}>
+          representante de vendas experiente
+        </span>{" "}
+        para se juntar à nossa equipe, sendo empresário, logista ou empreededor
+        individual.
+      </p>
+      <p className={styles.cta}>
+        <a
+          href="https://wa.me/5521986368650?text=Ol%C3%A1%2C+vim+para+saber+sobre+as+condi%C3%A7%C3%B5es+para+me+tornar+um+revendedor."
+          className={styles.ctaLink}
+        >
+          Clique e saiba mais sobre revenda!
+        </a>
       </p>
 
       <ImageSlider images={images} />
@@ -72,9 +76,12 @@ export async function getStaticProps() {
   const imagesDir = path.join(process.cwd(), 'public/assets/img');
   const images = fs.readdirSync(imagesDir);
 
+  const videoPath = "./assets/video/video01.mp4";
+
   return {
     props: {
-      images
+      images,
+      video: videoPath
     }
   };
 }
