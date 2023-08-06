@@ -16,17 +16,17 @@ export default function Home() {
       const loadAssets = async () => {
         // List of images
         const images = [
-          '/Rocha-Collor-LP/assets/img/img1.jpg',
-          '/Rocha-Collor-LP/assets/img/img2.jpg',
-          '/Rocha-Collor-LP/assets/img/img3.jpg',
-          '/Rocha-Collor-LP/assets/img/img4.jpg',
-          '/Rocha-Collor-LP/assets/img/img5.jpg',
-          '/Rocha-Collor-LP/assets/img/img6.jpg',
-          '/Rocha-Collor-LP/assets/img/img7.jpg'
+          'img1.jpg',
+          'img2.jpg',
+          'img3.jpg',
+          'img4.jpg',
+          'img5.jpg',
+          'img6.jpg',
+          'img7.jpg'
         ];
         setImages(images);
   
-        const videoPath = "/Rocha-Collor-LP/assets/video/video01.mp4";
+        const videoPath = "https://guilhermebernar.github.io/Rocha-Collor-LP/assets/video/video01.mp4";
         setVideo(videoPath);
       };
   
@@ -40,13 +40,13 @@ export default function Home() {
     <main className={styles.container}>
       <Head>
         {/* <GoogleTagManager /> */}
-        <link rel="icon" href="/assets/logos/logo-nobg.svg" />
+        <link rel="icon" href="https://guilhermebernar.github.io/Rocha-Collor-LP/assets/logos/logo-nobg.svg" />
         <title>Rocha Collor | Pintura, Massas e Qualidade</title>
       </Head>
       <header className={styles.header}>
         <div className={styles.logo}>
           <Image
-            src="Rocha-Collor-LP/assets/logos/logo-nobg.png"
+            src="https://guilhermebernar.github.io/Rocha-Collor-LP/assets/logos/logo-nobg.png"
             alt="Logo"
             width={200}
             height={150}

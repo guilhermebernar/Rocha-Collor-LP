@@ -18,7 +18,7 @@ export default function ImageSlider({ images }) {
             {images.map((image, index) => (
                 <SwiperSlide key={index}>
                     <div className={styles.imgcontainer}>
-                        <Image src={`/assets/img/${image}`} alt={`Slide ${index}`} width={500} height={300} />
+                        <Image src={`https://guilhermebernar.github.io/Rocha-Collor-LP/assets/img/${image}`} alt={`Slide ${index}`} width={500} height={300} />
                     </div>
                 </SwiperSlide>
             ))}
