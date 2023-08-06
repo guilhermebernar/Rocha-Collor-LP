@@ -38,11 +38,11 @@ export default function Home() {
 
   return (
     <main className={styles.container}>
-      <Head>
+      {/* <Head>
         <GoogleTagManager />
         <link rel="icon" href="/assets/logos/logo-nobg.svg" />
         <title>Rocha Collor | Pintura, Massas e Qualidade</title>
-      </Head>
+      </Head> */}
       <header className={styles.header}>
         <div className={styles.logo}>
           <Image
