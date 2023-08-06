@@ -5,11 +5,10 @@ import styles from '@/styles/Home.module.css';
 import CampainVideo from '@/components/CampainVideo';
 import ImageSlider from '@/components/ImageSlider';
 import ContactButton from '@/components/ContactButton';
-import GoogleTagManager from '@/components/GoogleTagManeger';
+// import GoogleTagManager from '@/components/GoogleTagManeger';
 
 export default function Home() {
   const [images, setImages] = useState([]);
-  const [video, setVideo] = useState(null);
 
   useEffect(() => {
     const loadAssets = async () => {
@@ -25,9 +24,7 @@ export default function Home() {
           'img7.jpg'
         ];
         setImages(images);
-  
-        const videoPath = "video01.mp4";
-        setVideo(videoPath);
+
       };
   
       loadAssets();
@@ -58,7 +55,7 @@ export default function Home() {
         Somos solução para pintura e revestimento
       </h2>
 
-      <CampainVideo video={video} />
+      <CampainVideo />
 
       <p className={styles.description}>
         Na <span className={styles.highlight}>Rocha Collor</span>, com sede em{" "}
