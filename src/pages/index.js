@@ -26,7 +26,7 @@ export default function Home() {
         ];
         setImages(images);
   
-        const videoPath = "https://guilhermebernar.github.io/Rocha-Collor-LP/assets/video/video01.mp4";
+        const videoPath = "video01.mp4";
         setVideo(videoPath);
       };
   
