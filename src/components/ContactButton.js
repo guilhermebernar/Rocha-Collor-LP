@@ -14,7 +14,7 @@ export default function ContactButton() {
           }}
     >
       <a
-        href="https://wa.me/5521986368650?text=Ol%C3%A1%2C+tenho+interesse+nos+produtos+da+Rocha+Collor."
+        href="https://wa.me/5521999520783?text=Ol%C3%A1%2C+tenho+interesse+nos+produtos+da+Rocha+Collor."
         target="_blank"
         style={{ 
           position: "fixed",

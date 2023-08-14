@@ -81,7 +81,7 @@ export default function Home() {
       </p>
       <p className={styles.cta}>
         <a
-          href="https://wa.me/5521986368650?text=Ol%C3%A1%2C+vim+para+saber+sobre+as+condi%C3%A7%C3%B5es+para+me+tornar+um+revendedor."
+          href="https://wa.me/5521999520783?text=Ol%C3%A1%2C+vim+para+saber+sobre+as+condi%C3%A7%C3%B5es+para+me+tornar+um+revendedor."
           className={styles.ctaLink}
         >
           Clique e saiba mais sobre revenda!
