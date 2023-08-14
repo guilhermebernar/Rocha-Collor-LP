@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css';
 import CampainVideo from '@/components/CampainVideo';
 import ImageSlider from '@/components/ImageSlider';
 import ContactButton from '@/components/ContactButton';
-// import GoogleTagManager from '@/components/GoogleTagManeger';
+import GoogleTagManager from '@/components/GoogleTagManeger';
 
 export default function Home() {
   const [images, setImages] = useState([]);
@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <Head>
-        {/* <GoogleTagManager /> */}
+        <GoogleTagManager />
         <link rel="icon" href="https://guilhermebernar.github.io/Rocha-Collor-LP/assets/logos/logo-nobg.svg" />
         <title>Rocha Collor | Pintura, Massas e Qualidade</title>
       </Head>
