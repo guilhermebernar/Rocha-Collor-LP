@@ -37,11 +37,8 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <Head>
-        <Script
-          strategy="afterInteractive"
-          >
-          <GoogleTagManager />
-        </Script>
+          {/* <GoogleTagManager /> */}
+
         <link rel="icon" href="https://guilhermebernar.github.io/Rocha-Collor-LP/assets/logos/logo-nobg.svg" />
         <title>Rocha Collor | Pintura, Massas e Qualidade</title>
       </Head>
