@@ -122,14 +122,14 @@ export default function Home() {
         para expandir nossa marca premium. Se você é um empresário, lojista ou
         empreendedor individual, essa é a sua oportunidade.
       </p>
-      {/* <p className={styles.cta}>
+      <p className={styles.cta}>
         <a
           href="https://wa.me/5521999520783?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+como+me+tornar+um+revendedor+de+produtos+premium."
           className={styles.ctaLink}
         >
           Descubra Como Fazer Parte da Nossa Rede de Revendedores Premium!
         </a>
-      </p> */}
+      </p>
 
       <ImageSlider images={images} />
 

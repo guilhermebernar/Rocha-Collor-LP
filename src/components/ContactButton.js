@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
 export default function ContactButton() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    window.addEventListener('resize', handleResize);
+      window.addEventListener('resize', handleResize);
 
-    // Limpar o listener quando o componente for desmontado
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      // Limpar o listener quando o componente for desmontado
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   const fontSize = windowWidth <= 767 ? '12px' : '18px';
@@ -54,4 +58,3 @@ export default function ContactButton() {
     </div>
   );
 }
-

@@ -15,7 +15,6 @@ export default function ContactButton({ onClick }) {
       <a
         href="https://wa.me/5521999520783?text=Ol%C3%A1%2C+quero+saber+mais+sobre+as+solu%C3%A7%C3%B5es+de+pintura+premium+da+Rocha+Collor."
         target="_blank"
-        rel="noopener noreferrer"
         onClick={onClick}
         style={{ 
           position: "fixed",
