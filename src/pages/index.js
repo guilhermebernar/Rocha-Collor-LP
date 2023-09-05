@@ -12,33 +12,6 @@ export default function Home() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = "https://www.googletagmanager.com/gtag/js?id=AW-713223450";
-    document.head.appendChild(script1);
-
-    script1.onload = () => {
-      const script2 = document.createElement('script');
-      script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'AW-713223450');
-      `;
-      document.head.appendChild(script2);
-
-      const script3 = document.createElement('script');
-      script3.innerHTML = `
-        gtag('event', 'conversion', {
-            'send_to': 'AW-713223450/GjBaCLj1npkYEJrai9QC',
-            'transaction_id': ''
-        });
-      `;
-      document.head.appendChild(script3);
-    };
-  }, []);
-
-  useEffect(() => {
     const loadAssets = async () => {
         const images = [
           "img1.jpg",
@@ -54,6 +27,12 @@ export default function Home() {
     loadAssets();
   }, []);
 
+  const minhaUrl = 'https://guilhermebernar.github.io/Rocha-Collor-LP';
+
+  const handleContactButtonClick = () => {
+    gtag_report_conversion(minhaUrl);
+  }
+
   return (
     <main className={styles.container}>
       <Head>
@@ -64,6 +43,35 @@ export default function Home() {
         <title>
           Rocha Collor | Pintura de Luxo e Revestimentos de Alta Qualidade
         </title>
+        
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-713223450"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-713223450');
+          `
+        }}>
+        </script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-713223450/GjBaCLj1npkYEJrai9QC',
+                  'event_callback': callback
+              });
+              return false;
+            }
+          `
+        }}>
+        </script>
       </Head>
       <header className={styles.header}>
         <div className={styles.logo}>
@@ -125,7 +133,7 @@ export default function Home() {
 
       <ImageSlider images={images} />
 
-      <ContactButton />
+      <ContactButton onClick={handleContactButtonClick}/>
     </main>
   );
 }
